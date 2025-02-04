@@ -2,10 +2,11 @@
 FROM golang:1.20 AS builder
 
 # 作業ディレクトリを作成
-WORKDIR /app
+WORKDIR /app/backend
 
 # Go モジュールと依存関係をコピー
-COPY go.mod go.sum ./
+COPY backend/go.mod backend/go.sum ./
+# changed
 RUN go mod download
 
 # アプリケーションのソースコードをコピー
